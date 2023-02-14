@@ -12,6 +12,9 @@ public class RecursionBasics {
             return;
         }
         System.out.println(n);
+
+        // This is the last function call.
+        // This is called tail recursion.
         printno(n + 1);
     }
 }

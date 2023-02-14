@@ -2,7 +2,7 @@ package com.recusion;
 
 public class Fibo {
     public static void main(String[] args) {
-        int ans = fibonacci(6);
+        int ans = fibonacci(5);
         System.out.println(ans);
     }
 
