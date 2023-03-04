@@ -1,6 +1,8 @@
 package com.recusion;
 
 import java.util.Arrays;
+import java.util.Scanner;
+
 
 public class ArrayLive {
     public static void main(String[] args) {
@@ -14,27 +16,92 @@ public class ArrayLive {
 //        int[] arr = {1, 1, 2, 1, 2, 2, 1, 1, 2, 1};
 //        int ele = majorele(arr);
 //        System.out.println(ele);
-        int[] arr = {1, 0, 1, 1, 1, 0, 1, 1};
-        int count = maxconsecutiveones(arr);
-        System.out.println(count);
+//        int[] arr = {1, 0, 1, 1, 1, 0, 1, 1};
+//        int count = maxconsecutiveones(arr);
+//        System.out.println(count);
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter the number: ");
+//        int n = input.nextInt();
+//        boolean ans = checkforprime(n);
+//        System.out.println(ans);
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter the no of rows: ");
+//        int n = input.nextInt();
+//        pattern1(n);
+//        Scanner input = new Scanner(System.in);
+//        System.out.print("Enter the no of rows: ");
+//        int n = input.nextInt();
+//        pattern2(n);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter the no of rows: ");
+        int n = input.nextInt();
+        patternhw(n);
     }
 
-    public static int maxconsecutiveones(int[] arr) {
-        int maxcount = 0;
-        int count = 0;
-
-        for(int i = 0; i < arr.length; i++) {
-            if (arr[i] == 1) {
-                count++;
+    public static void patternhw(int n) {
+        for (int i = 0; i < n/2; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print("* ");
             }
-
-            else {
-                maxcount = Math.max(maxcount, count);
-                count = 0;
-            }
+            System.out.println();
         }
-        return Math.max(maxcount, count);
+        for (int i = n/2; i < n; i++) {
+            for (int j = n - i; j > 0; j--) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
+
+//    public static void pattern2(int n) {
+//        for(int row = 0; row < n; row++) {
+//            for (int space = 0; space < row; space++) {
+//                System.out.print("  ");
+//            }
+//            for (int col = 0; col < row; col ++) {
+//                System.out.print("* ");
+//            }
+//            System.out.println();
+//        }
+//    }
+
+//    public static void pattern1(int n) {
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j <= i; j++) {
+//                System.out.print("* ");
+//            }
+//            System.out.println();
+//        }
+//    }
+
+//    public static boolean checkforprime(int n) {
+//        int num = 2;
+//
+//        while(num * num <= n) {
+//            if (n % num == 0) {
+//                return false;
+//            }
+//            num++;
+//        }
+//        return true;
+//    }
+
+//    public static int maxconsecutiveones(int[] arr) {
+//        int maxcount = 0;
+//        int count = 0;
+//
+//        for(int i = 0; i < arr.length; i++) {
+//            if (arr[i] == 1) {
+//                count++;
+//            }
+//
+//            else {
+//                maxcount = Math.max(maxcount, count);
+//                count = 0;
+//            }
+//        }
+//        return Math.max(maxcount, count);
+//    }
 
 //    public static int majorele(int[] arr) {
 //        for (int i = 0; i < arr.length; i++) {
