@@ -1,6 +1,7 @@
 package com.recusion;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class ArrayProblemsRecursion {
     public static void main(String[] args) {
@@ -15,43 +16,114 @@ public class ArrayProblemsRecursion {
 //        int[] arr = {1, 2, 3, 4, 4, 8};
 //        ArrayList<Integer> ans = findallindex2(arr, 4, 0);
 //        System.out.println(ans);
-        int[] arr = {5, 6, 7, 8, 9, 1, 2, 3};
-        int target = 8;
-        int start = 0;
-        int end = arr.length - 1;
-        int indx = rotatedbinarysearch(arr, target, start, end);
-        System.out.println(indx);
-
-
+//        int[] arr = {5, 6, 7, 8, 9, 1, 2, 3};
+//        int target = 9;
+//        int start = 0;
+//        int end = arr.length - 1;
+//        int indx = rotatedbinarysearch(arr, target, start, end);
+//        System.out.println(indx);
+//        patternrec1(4, 0);
+//        patternrec2(4, 0);
+//        int[] arr = {4, 3, 2, 1};
+//        bubblesortrec(arr, arr.length - 1, 0);
+//        System.out.println(Arrays.toString(arr));
+//        int[] arr = {4, 3, 2, 1};
+//        selectionsortrec(arr, arr.length, 0, 0);
+//        System.out.println(Arrays.toString(arr));
     }
 
-    private static int rotatedbinarysearch(int[] arr, int target, int start, int end) {
-        if (start > end) {
-            return -1;
-        }
+//    public static void selectionsortrec(int[] arr, int row, int col, int max) {
+//        if (row == 0) {
+//            return;
+//        }
+//        if (col < row) {
+//            if (arr[col] > arr[max]) {
+//                selectionsortrec(arr, row, col + 1, col);
+//            }
+//            else {
+//                selectionsortrec(arr, row, col + 1, max);
+//            }
+//        }
+//        else {
+//            int temp = arr[max];
+//            arr[max] = arr[row - 1];
+//            arr[row - 1] = temp;
+//            selectionsortrec(arr, row - 1, 0, 0);
+//        }
+//    }
 
-        int mid = start + (end - start)/2;
+//    public static void bubblesortrec(int[] arr, int row, int col) {
+//        if (row == 0) {
+//            return;
+//        }
+//        if (col < row) {
+//            if (arr[col] > arr[col + 1]) {
+//                int temp = arr[col];
+//                arr[col] = arr[col + 1];
+//                arr[col + 1] = temp;
+//            }
+//            bubblesortrec(arr, row, col + 1);
+//        }
+//        else {
+//            bubblesortrec(arr, row - 1, 0);
+//        }
+//    }
 
-        if (arr[mid] == target) {
-            return mid;
-        }
+//    public static void patternrec1(int row, int col) {
+//        if (row == 0) {
+//            return;
+//        }
+//        if (col < row) {
+//            System.out.print("* ");
+//            patternrec1(row, col + 1);
+//        }
+//        else {
+//            System.out.println();
+//            patternrec1(row - 1, 0);
+//        }
+//    }
+//public static void patternrec2(int row, int col) {
+//    if (row == 0) {
+//        return;
+//    }
+//    if (col < row) {
+//        patternrec2(row, col + 1);
+//        System.out.print("* ");
+//
+//    }
+//    else {
+//        patternrec2(row - 1, 0);
+//        System.out.println();
+//    }
+//}
 
-        if (arr[start] < arr[mid]) {
-            if (target >= arr[start] && target <= arr[mid]) {
-                return rotatedbinarysearch(arr, target, start, mid - 1);
-            }
-            else {
-                return rotatedbinarysearch(arr, target, mid + 1, end);
-            }
-        }
-
-        if (target >= arr[mid] && target <= arr[end]) {
-            return rotatedbinarysearch(arr, target, mid + 1, end);
-        }
-        else {
-            return rotatedbinarysearch(arr, target, start, mid - 1);
-        }
-    }
+//    private static int rotatedbinarysearch(int[] arr, int target, int start, int end) {
+//        if (start > end) {
+//            return -1;
+//        }
+//
+//        int mid = start + (end - start)/2;
+//
+//        if (arr[mid] == target) {
+//            return mid;
+//        }
+//
+//        if (arr[start] < arr[mid]) {
+//            if (target >= arr[start] && target <= arr[mid]) {
+//                return rotatedbinarysearch(arr, target, start, mid - 1);
+//            }
+//            else {
+//                return rotatedbinarysearch(arr, target, mid + 1, end);
+//            }
+//        }
+//
+//        if (target >= arr[mid] && target <= arr[end]) {
+//            return rotatedbinarysearch(arr, target, mid + 1, end);
+//        }
+//        else {
+//            return rotatedbinarysearch(arr, target, start, mid - 1);
+//        }
+//    }
 
 //    public static ArrayList<Integer> findallindex(int[] arr, int target, int index, ArrayList<Integer> list) {
 //        if (index == arr.length) {
